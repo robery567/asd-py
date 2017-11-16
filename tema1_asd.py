@@ -1,5 +1,7 @@
 from Classes.fraction import Fraction
 from Classes.polynomial import Polynomial
+from Classes.phrase import Phrase
+from Classes.networking import Networking
 import time
 
 numerator = input("Numarator: ")
@@ -63,3 +65,49 @@ denominator = input("Numitor x: ")
 polynomial = Polynomial(coefficients, Fraction(numerator, denominator))
 print "Am obtinut valoarea: ", polynomial.get_value().get_fraction()
 print "Radacini:", polynomial.get_roots()
+
+# Serii
+e = 0.00005
+x = 0.5
+
+
+def term(i):
+    if x <= i:
+        if i == 1:
+            return x - 1
+        return term(i - 1) * (1 - x) * (1 - 1/i)
+    else:
+        if i == 1:
+            return (x - 1) / x
+        return term(i - 1) * ((x - 1) / x) * (1 - 1/i)
+
+
+def series_sum():
+    i = 1
+    sum_series = 0
+
+    while abs(term(i)) > e:
+        sum_series += term(i)
+        i += 1
+
+    return sum_series, i-1 # Suma , numar termeni
+
+
+print "Suma seriei: ", series_sum()
+
+# Criptare fraza
+print "Hai sa criptam o fraza !"
+time.sleep(1)
+phrase = raw_input("Fraza: ")
+phrase = Phrase(phrase)
+
+print "Avem ", phrase.get_words_count(), " cuvinte"
+print "Cuvintele sunt", ' '.join(phrase.get_words())
+phrase.encrypt_phrase()
+print "Fraza criptata este: ", ' '.join(phrase.get_words())
+
+# Generare ip
+networking = Networking()
+networking.generate_ip()
+
+print "IP random: ", networking.get_ip()
