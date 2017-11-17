@@ -15,11 +15,13 @@ class Phrase:
                 del word
                 word = []
 
-    def get_words(self):
-        return self.words
+        self.words.append(word)
 
     def get_words_count(self):
         return len(self.words)
+
+    def get_words(self):
+        return self.words
 
     def __reverse_word(self, word):
         reversed_word = ""

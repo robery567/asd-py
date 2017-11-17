@@ -90,7 +90,7 @@ def series_sum():
         sum_series += term(i)
         i += 1
 
-    return sum_series, i-1 # Suma , numar termeni
+    return sum_series, i-1
 
 
 print "Suma seriei: ", series_sum()
@@ -102,7 +102,7 @@ phrase = raw_input("Fraza: ")
 phrase = Phrase(phrase)
 
 print "Avem ", phrase.get_words_count(), " cuvinte"
-print "Cuvintele sunt", ' '.join(phrase.get_words())
+print "Cuvintele sunt:", phrase.get_words()
 phrase.encrypt_phrase()
 print "Fraza criptata este: ", ' '.join(phrase.get_words())
 
