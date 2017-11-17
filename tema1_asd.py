@@ -1,5 +1,6 @@
 from Classes.fraction import Fraction
 from Classes.polynomial import Polynomial
+from Classes.number import Number
 from Classes.phrase import Phrase
 from Classes.networking import Networking
 import time
@@ -65,6 +66,12 @@ denominator = input("Numitor x: ")
 polynomial = Polynomial(coefficients, Fraction(numerator, denominator))
 print "Am obtinut valoarea: ", polynomial.get_value().get_fraction()
 print "Radacini:", polynomial.get_roots()
+
+print("Hai sa convertim un numar!")
+number = input("Numar: ")
+number = Number(number)
+
+print "Baza 2", number.to_base2()
 
 # Serii
 e = 0.00005
