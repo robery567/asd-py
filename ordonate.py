@@ -22,7 +22,9 @@ def max_min(l):
 
     return min, max
 
+
 data_max_min = max_min([1, 2, 3, 4, 5])
+
 print "Min: ", data_max_min[0], "\n", "Max: ", data_max_min[1]
 
 
